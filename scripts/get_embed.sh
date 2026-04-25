@@ -1,0 +1,1 @@
+python scripts/get_embedding.py --feat_dir ./esp --model_name ./model/esm2_650m
