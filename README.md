@@ -13,7 +13,7 @@ conda create -n rammesi python==3.10.12
 ```bash
 # We strongly recommend prioritizing the installation of FAISS.
 # https://github.com/facebookresearch/faiss 
-# We used the Bash method for installation, and ref the follow document:
+# We used the Bash method for installation, and ref the follow documents:
 # https://ai.meta.com/tools/faiss/ 
 # https://github.com/facebookresearch/faiss/blob/main/INSTALL.md
 conda install -c pytorch -c nvidia faiss-gpu=1.8.0 pytorch=2.3.0=*cuda* pytorch-cuda=12.1 numpy 
@@ -23,14 +23,15 @@ pip install -r ./requirements.txt
 ```
 
 ### Training
-The source data are from ESP[1] (remove the molecular that cannot be embedded by the molecular encoder)and Reactzyme[2] (remove the substrates such as water, gases, and metal ions).
-[1] Kroll A, Ranjan S, Engqvist M K M, et al. A general model to predict small molecule substrates of enzymes based on machine and deep learning[J]. Nature communications, 2023, 14(1): 2787.
+The source data are from ESP[1] (remove the molecules that the molecular encoder cannot embed)and Reactzyme[2] (remove the substrates such as water, gases, and metal ions).
+
+[1] Kroll A, Ranjan S, Engqvist M K M, et al. A general model to predict small molecule substrates of enzymes based on machine and deep learning[J]. Nature Communications, 2023, 14(1): 2787.
 
 [2] Hua C, Zhong B, Luan S, et al. Reactzyme: A benchmark for enzyme-reaction prediction[J]. Advances in Neural Information Processing Systems, 2024, 37: 26415-26442.
 
 ### Training
 ```bash
-# put the needed file in corresponding folder
+# put the needed file in the corresponding folder
 mv ./scripts/train_ESP.sh ./
 bash ./train_ESP.sh
 # same with Reactzyme
